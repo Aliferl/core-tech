@@ -1,1 +1,1 @@
-# coretech
+# core-tech
