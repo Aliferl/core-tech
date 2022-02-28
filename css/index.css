@@ -1,0 +1,41 @@
+html,
+body {
+    background-image: url("../images/banner-laptop.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.row {
+    padding-top: 150px;
+}
+
+h1 {
+    color: white;
+}
+
+p {
+    color: white;
+    padding-bottom: 150px;
+}
+
+
+.button .btn {
+    border-radius: 50px;
+    background-color: blueviolet;
+    color: white;
+    font-weight: bolder;
+    padding: 10px 30px;
+}
+
+.button .btn:hover {
+    border-radius: 50px;
+    background-color: white;
+    color: blueviolet;
+    font-weight: bolder;
+    transition: 0.5s;
+}
+
+img {
+    border-radius: 10px;
+}

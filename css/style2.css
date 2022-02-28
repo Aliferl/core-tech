@@ -1,0 +1,391 @@
+/*
+	Author       : html.design
+	Template Name: Christmas 404 Error Page - Responsive
+	Version      : 1.0
+*/
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+
+
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Raleway', sans-serif;
+	background: url(../images/bg-form.jpg) no-repeat left;
+}
+
+html {
+	-ms-overflow-style: scrollbar;
+}
+
+.alltrans,
+a,
+input[type="button"],
+input[type="submit"],
+button,
+table th,
+table td,
+.navigation-menu>li>a span:after,
+.btn,
+.btn:after,
+.section-title:after,
+.service-icon,
+.owl-dot,
+.owl-nav>div,
+.blog-img img,
+.owl-nav>div:before,
+.portfolio-box:after,
+.portfolio-box img,
+.portfolio-content {
+	-webkit-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+
+a {
+	color: #e52225;
+	text-decoration: none;
+}
+
+a:hover,
+a:focus {
+	color: #e52225;
+	outline: none;
+	text-decoration: none;
+}
+
+button:hover,
+button:focus {
+	outline: none;
+}
+
+.link-dark {
+	color: #0f0f0f;
+}
+
+.link-dark:hover,
+.link-dark:focus {
+	color: #e52225;
+	text-decoration: none;
+}
+
+@media screen and (-ms-high-contrast:active),
+(-ms-high-contrast:none) {
+	a:active {
+		background-color: transparent;
+	}
+}
+
+strong {
+	font-weight: 700;
+}
+
+small,
+.small {
+	font-size: 85%;
+}
+
+sub,
+sup {
+	font-size: 80%
+}
+
+p {
+	margin: 0 0 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	margin: 0 0 15px;
+	font-weight: 700;
+	color: #0f0f0f;
+	text-transform: capitalize;
+	font-family: 'Raleway', sans-serif;
+}
+
+h1,
+h2 {
+	font-size: 60px;
+}
+
+h3 {
+	font-size: 30px;
+	font-weight: 600;
+}
+
+h4 {
+	font-size: 24px;
+	font-weight: 600;
+}
+
+h5 {
+	font-size: 22px;
+	margin-bottom: 10px;
+	font-weight: 600;
+}
+
+h6 {
+	font-size: 18px;
+	margin-bottom: 10px;
+	font-weight: 600;
+}
+
+img {
+	width: 100%;
+}
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+}
+
+
+/*--- 404 Error Page ---*/
+
+
+.wrapper-interior {
+	overflow-x: hidden;
+	height: 100%;
+	position: relative;
+}
+
+.int-left {
+	width: 50%;
+	padding: 30px;
+	height: 100%;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+.int-right {
+	background: rgba(255, 255, 255, 0.5);
+	width: 50%;
+	padding: 0px;
+	height: 100%;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	display: flex;
+	align-items: center;
+}
+
+.banner {
+	background: url(../images/inner-img.jpg) no-repeat center;
+	height: 100%;
+	background-size: cover;
+	display: block;
+	position: relative;
+	overflow: hidden;
+	border: 5px solid #543884;
+	padding: 20px;
+}
+
+.int-left:before {}
+
+.inner-content h2 {
+	font-size: 50px;
+	font-weight: 200;
+	color: #272727;
+}
+
+.inner-content h3 {
+	font-size: 30px;
+	font-weight: 100;
+	color: #272727;
+}
+
+.inner-content p {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 26px;
+}
+
+.inner-content a {
+	background: #543884;
+	color: #272727;
+	font-size: 18px;
+	padding: 10px 25px;
+	border-radius: 4px;
+	letter-spacing: 2px;
+	display: inline-block;
+}
+
+.inner-content a:hover {
+	background: #aaaaaa;
+	color: #ffffff;
+	letter-spacing: 6px;
+}
+
+.interior-form {
+	padding: 30px 30px 0px 30px;
+	width: 100%;
+}
+
+.interior-form h3 {
+	font-size: 50px;
+	font-weight: 200;
+	color: #272727;
+}
+
+
+
+
+/*Check box*/
+input[type="checkbox"] {
+	position: absolute;
+	right: 9000px;
+}
+
+input[type="checkbox"]+.label-text:before {
+	content: "\f096";
+	font-family: "FontAwesome";
+	font-size: 18px;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	width: 1em;
+	display: inline-block;
+	margin-right: 5px;
+}
+
+input[type="checkbox"]:checked+.label-text:before {
+	content: "\f14a";
+	color: #203a45;
+	animation: effect 250ms ease-in;
+}
+
+input[type="checkbox"]:disabled+.label-text {
+	color: #aaa;
+}
+
+input[type="checkbox"]:disabled+.label-text:before {
+	content: "\f0c8";
+	color: #ccc;
+}
+
+@keyframes effect {
+	0% {
+		transform: scale(0);
+	}
+
+	25% {
+		transform: scale(1.3);
+	}
+
+	75% {
+		transform: scale(1.4);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+.label-text {
+	font-size: 14px;
+	color: #000000;
+	font-weight: 300;
+}
+
+
+.interior-form .form-group {
+	position: relative;
+}
+
+.interior-form .admin_form_icon {
+	position: absolute;
+	top: 0;
+	left: 0px;
+	height: 100%;
+	width: 40px;
+}
+
+.interior-form .admin_form_icon::before {
+	content: "";
+	background: #543884;
+	width: 2px;
+	height: 60%;
+	top: 10px;
+	position: absolute;
+	right: 0px;
+}
+
+.icon-up {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	font-size: 20px;
+	color: #272727;
+	transform: translate(-50%, -50%);
+}
+
+.interior-form .form-control {
+	display: block;
+	width: 100%;
+	border: 2px solid #543884;
+	background-color: #ffffff;
+	line-height: 24px;
+	padding: 10px 15px 10px 50px;
+	border-radius: 10px;
+	font-weight: 400;
+	font-size: 14px;
+	margin: 0;
+	height: auto;
+	-webkit-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+
+.row.form-group {
+	margin-bottom: 0px;
+}
+
+.interior-form .form-control:focus {
+	box-shadow: none;
+	letter-spacing: 4px;
+	-webkit-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+
+.interior-form button {
+	background: #543884;
+	color: #272727;
+	font-size: 18px;
+	padding: 10px 25px;
+	border-radius: 4px;
+	letter-spacing: 2px;
+	display: inline-block;
+	border: none;
+	cursor: pointer;
+}
+
+.interior-form button:hover {
+	background: #aaaaaa;
+	color: #ffffff;
+	letter-spacing: 6px;
+}
+
+
+
+
+.copyright.text-left {
+	margin-top: 30px;
+	margin-bottom: 0px;
+	color: #202020;
+}
+
+.copyright.text-left a {
+	color: #000000;
+}
+
+.copyright.text-left a:hover {
+	color: #dc4d13;
+}
