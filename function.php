@@ -102,4 +102,37 @@ function cari($search)
     return query($query);
 }
 
+function register($data){
+    global $config;
+
+    $username = strtolower(stripslashes($data["username"]));
+    $password = mysqli_real_escape_string($config, $data["password"]);
+    $confirmpassword = mysqli_real_escape_string($config, $data["logpass"]);;
+
+    // cek apakah username sudah ada atau belum
+    $result = mysqli_query($config, "SELECT username FROM user WHERE username = '$username' ");
+    if (mysqli_fetch_assoc($result)){
+        echo "<script>
+                alert ('Username sudah digunakan')
+            </script>";
+            return false;
+    }
+
+    // cek konfirmasi password
+    if( $password !== $confirmpassword ){
+        echo "<script>
+                alert ('Password tidak cocok');
+            </script>";
+        return false;
+    }
+
+    // enkripsi password
+    $password = password_hash($password, PASSWORD_DEFAULT);
+    // hubungin ke database
+    mysqli_query($config, "INSERT INTO user VALUES('','$username', '$password')");
+    return mysqli_affected_rows($config);
+
+
+}
+
 ?>
