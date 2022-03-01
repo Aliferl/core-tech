@@ -1,3 +1,49 @@
+<?php 
+require 'function.php';
+
+session_start();
+
+if(isset($_SESSION["login"])){
+    header("location:dashboard.php");
+}
+
+if(isset($_POST["login"])){
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    
+    $result = mysqli_query($config, "SELECT * FROM user where username = '$username'");
+
+    // cek username
+    if (mysqli_num_rows($result) === 1 ){
+
+        //cek password
+        $row = mysqli_fetch_assoc($result);
+        if (password_verify($password, $row["password"])){
+            $_SESSION["login"] = true;
+            header("location: index.php");
+            exit;
+        }
+
+    }
+
+    $error = true;
+
+}
+
+if(isset($_POST["register"])){
+  if(register($_POST) > 0 ){
+    echo "<script>
+            alert('User berhasil dibuat');
+            document.location.href = 'form.php';
+            </script>" ;
+}
+else{
+    echo mysqli_error($config);
+}
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,14 +94,16 @@
                       <img src="images/logo-no-bg.png" alt="" width="105px">
                       <h4 class="mb-4 pb-3">Log In</h4>
                       <div class="form-group">
-                        <input type="email" name="username" class="form-style" placeholder="Username" id="username" autocomplete="off">
+                        <form action="" method="post">
+                        <input type="text" name="username" class="form-style" placeholder="Username" id="username" autocomplete="off">
                         <i class="input-icon uil uil-at"></i>
                       </div>
                       <div class="form-group mt-2">
-                        <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+                        <input type="password" name="password" class="form-style" placeholder="Your Password" id="password" autocomplete="off">
                         <i class="input-icon uil uil-lock-alt"></i>
                       </div>
-                      <a href="#" class="btn mt-4 pt-2">submit</a>
+                      <button type="submit" name="login" class="btn mt-4 pt-2">submit</button>
+                      </form>
                       <p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your password?</a></p>
                     </div>
                   </div>
@@ -66,6 +114,7 @@
                       <img src="images/logo-no-bg.png" alt="" width="105px">
                       <h4 class="mb-4 pb-3">Sign Up</h4>
                       <div class="form-group">
+                        <form action="" method="post">
                         <input type="text" name="username" class="form-style" placeholder="Username" id="username" autocomplete="off">
                         <i class="input-icon uil uil-user"></i>
                       </div>
@@ -77,7 +126,8 @@
                         <input type="password" name="logpass" class="form-style" placeholder="Confirm Password" id="logpass" autocomplete="off">
                         <i class="input-icon uil uil-lock-alt"></i>
                       </div>
-                      <a href="#" class="btn mt-4 pt-2">submit</a>
+                      <button type="submit" name="register" class="btn mt-4 pt-2">submit</button>
+                      </form>
                     </div>
                   </div>
                 </div>
